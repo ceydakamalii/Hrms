@@ -5194,3 +5194,45 @@ java.lang.InterruptedException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:06:52.138
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.bsYKhbZe => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:09.221
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:09.222
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@785eec64[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=1000)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:09.223
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:12.052
+!MESSAGE Boot LS startup time from start to initialized: 2828ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:12.190
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.TnAcdgRWisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:12.191
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:12.191
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:12.192
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:12.192
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:12.193
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.TnAcdgRW => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:12.201
+!MESSAGE classpath=128 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:12.205
+!MESSAGE buffering callback sts4.classpath.TnAcdgRW hrms false 128
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:12.205
+!MESSAGE executing callback sts4.classpath.TnAcdgRW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-03 19:24:12.635
+!MESSAGE executing callback sts4.classpath.TnAcdgRW SUCCESS [done]
