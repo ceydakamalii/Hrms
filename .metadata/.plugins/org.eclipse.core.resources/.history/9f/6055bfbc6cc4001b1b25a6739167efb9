@@ -1,0 +1,16 @@
+package kodlamaio.hrms.core.adapters.concretes;
+
+import kodlamaio.hrms.core.adapters.abstracts.MernisCheckService;
+import kodlamaio.hrms.entities.concretes.Candidate;
+
+
+public class MernisCheckManager implements MernisCheckService{
+
+	@Override
+	public boolean checkIfRealPerson(Candidate candidate) {
+		
+		return false;
+	}
+	
+
+}

@@ -1,0 +1,12 @@
+package kodlamaio.hrms.dataAccess.abstracts;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import kodlamaio.hrms.entities.concretes.ConfirmEmployerByStaffUser;
+
+public interface ConfirmEmployerDao extends JpaRepository<ConfirmEmployerByStaffUser, Integer> {
+	
+	ConfirmEmployerByStaffUser getByEmployer_UserId(int id);
+	boolean existsByEmployer_Id(int id);
+
+}

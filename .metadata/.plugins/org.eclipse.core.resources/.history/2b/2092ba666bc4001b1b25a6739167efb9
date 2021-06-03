@@ -1,0 +1,32 @@
+package kodlamaio.hrms.services;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class FakeMernis {
+	
+	public static boolean checkIfRealPerson(String name,String surname,String nationalIdentity,String birth_year) {
+		if(name.length()<2 || surname.length()<2) {
+			System.out.println("İsim ve soyisim alanı 2 karakterden küçük olmamalidir.");
+			return false;
+		}
+		if(nationalIdentity.length()!=11 || nationalIdentity.startsWith("0")) {
+			System.out.println("Tc kimlik no 11 karakterden oluşmalıdır, Tc kimlik no 0 ile başlayamaz.");
+			return false;
+			
+		}
+		
+		String regex="^[0-9]+$";
+		Pattern pattern= Pattern.compile(regex);
+		Matcher matcher=pattern.matcher(nationalIdentity);
+		
+		if(!matcher.matches()) {
+			return false;
+		}
+		return true;
+		
+		
+		
+	}
+
+}

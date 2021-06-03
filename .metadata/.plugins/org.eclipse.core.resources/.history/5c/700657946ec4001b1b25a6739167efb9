@@ -1,0 +1,5 @@
+package kodlamaio.hrms.core.customize;
+
+public class ValidationExceptionHandler {
+
+}
