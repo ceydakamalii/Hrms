@@ -27,7 +27,7 @@ public class StaffUser extends User{
 	private String name;
 	
 	@NotBlank(message = "Soyisim alanını boş bırakmayınız, soyisiminizi giriniz !")
-	@Column(name="username")
+	@Column(name="surname")
 	private String userName;
 	
 	

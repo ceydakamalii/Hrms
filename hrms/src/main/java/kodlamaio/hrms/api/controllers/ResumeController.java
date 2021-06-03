@@ -41,7 +41,8 @@ public class ResumeController {
 	  }
 	
 	
-	@PutMapping("/uploadImage")
+	@PutMapping("/uploadImage") //güncelleme işlemi olduğunu belirttik.
+	//resim yüklemiceksek @RequestBody 
 	public Result saveImage(@RequestBody MultipartFile file,@RequestParam int resumeId) {
 		return this.resumeService.saveImage(file, resumeId);
 		

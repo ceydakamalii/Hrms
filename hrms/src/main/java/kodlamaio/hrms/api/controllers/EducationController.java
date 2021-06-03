@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlamaio.hrms.business.abstracts.EducationService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
-import kodlamaio.hrms.entities.concretes.Education;
+import kodlamaio.hrms.entities.dtos.EducationDto;
 
 @RestController
 @RequestMapping("api/education")
@@ -29,14 +29,14 @@ public class EducationController {
 	}
 	
 	@GetMapping("/getall")
-	public DataResult<List<Education>> getAll(){
+	public DataResult<List<EducationDto>> getAll(){
 		return this.educationService.getAll();
 	}
 	
 	
 	@PostMapping("/add")
-	public Result add(@Valid @RequestBody Education education) {
-		return this.educationService.add(education);
+	public Result add(@Valid @RequestBody EducationDto educationDto) {
+		return this.educationService.add(educationDto);
 	  }
 	
 	

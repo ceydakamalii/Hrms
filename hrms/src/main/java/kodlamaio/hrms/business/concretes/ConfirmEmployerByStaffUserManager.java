@@ -40,7 +40,7 @@ public class ConfirmEmployerByStaffUserManager implements ConfirmEmployerByStaff
 
 	@Override
 	public Result confirmUser(String companyName) {
-		if (!employerDao.findByCompanyName(companyName)) {
+		if (!employerDao.existsByCompanyName(companyName)) {
 			return new ErrorResult("Şirket Kaydı Bulunamadı");
 		}
 		
@@ -53,7 +53,7 @@ public class ConfirmEmployerByStaffUserManager implements ConfirmEmployerByStaff
 		employer = employerDao.findByCompanyNameEquals(companyName);
 		employer.setUserConfirm(true);
 		employerDao.save(employer);
-		cUser = confirmEmployerDao.findByEmployer_UserId(employer.getId());
+		cUser = confirmEmployerDao.findByEmployerId(employer.getId());
 		cUser.setConfirmed(true);
 		LocalDate e = (LocalDate.now());
 		cUser.setConfirmedDate(Date.valueOf(e));

@@ -7,7 +7,7 @@ import kodlamaio.hrms.entities.concretes.ConfirmEmployerByStaffUser;
 @Repository
 public interface ConfirmEmployerDao extends JpaRepository<ConfirmEmployerByStaffUser, Integer> {
 	
-	ConfirmEmployerByStaffUser findByEmployer_UserId(int id);
-	boolean  findByEmployer_UserIdEquals(int id);
+	ConfirmEmployerByStaffUser findByEmployerId(int id);
+	boolean  existsByEmployerId(int id);
 
 }
