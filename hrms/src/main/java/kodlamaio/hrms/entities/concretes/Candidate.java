@@ -1,5 +1,6 @@
 package kodlamaio.hrms.entities.concretes;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -43,6 +44,8 @@ public class Candidate extends User{
 	@NotBlank(message="Doğum yılı boş bırakılamaz, doğum yılı 4 karakterden olusmalıdır.")
 	@Column(name="birth_year")
 	private String birth_year;
+	
+	
 	
 	
 

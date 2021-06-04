@@ -50,10 +50,10 @@ public class VerificationManager implements VerificationService {
 	@Override
 	public Result verifyUser(String code) {
 		
-		if (!this.verificationDao.findByVerifyCode(code)) {
+		if (!this.verificationDao.existsByVerifyCode(code)) {
 			return new ErrorResult("Hatalı Doğrulama İşlemi");
 		}
-		Verification newVerifyCode = verificationDao.findByVerifyCodeEquals(code);
+		Verification newVerifyCode = verificationDao.getByVerifyCode(code);
 		if (this.verificationDao.getOne(newVerifyCode.getId()).isConfirmed()) {
 			return new ErrorResult("Doğrulama işlemi daha önce yapıldı");
 		}

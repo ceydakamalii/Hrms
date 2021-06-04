@@ -8,6 +8,7 @@ import kodlamaio.hrms.adapters.service.VerifyApiService;
 import kodlamaio.hrms.entities.concretes.Candidate;
 import tr.gov.nvi.tckimlik.WS.KPSPublicSoapProxy;
 
+
 @Service
 public class MernisAdapter implements VerifyApiService<Candidate>{
 	
@@ -28,5 +29,8 @@ public class MernisAdapter implements VerifyApiService<Candidate>{
 		}
 			return false;
 	}
+	
+
+
 
 }

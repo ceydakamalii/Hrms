@@ -33,7 +33,7 @@ public class GraduateManager implements GraduateService{
 
 	@Override
 	public Result add(Graduate graduate) {
-		if (graduateDao.findByDescription(graduate.getDescription())) {
+		if (graduateDao.existsByDescription(graduate.getDescription())) {
 			return new ErrorResult("Daha önce Eklendi");
 		}
 		

@@ -44,16 +44,16 @@ public class ConfirmEmployerByStaffUserManager implements ConfirmEmployerByStaff
 			return new ErrorResult("Şirket Kaydı Bulunamadı");
 		}
 		
-		if (employerDao.findByCompanyNameEquals(companyName).isUserConfirm()) {
+		if (employerDao.getByCompanyName(companyName).isUserConfirm()) {
 			return new ErrorResult("Daha önce onaylanmış Şirket");
 		}
 		
 		Employer employer = new Employer();
 		ConfirmEmployerByStaffUser cUser = new ConfirmEmployerByStaffUser();
-		employer = employerDao.findByCompanyNameEquals(companyName);
+		employer = employerDao.getByCompanyName(companyName);
 		employer.setUserConfirm(true);
 		employerDao.save(employer);
-		cUser = confirmEmployerDao.findByEmployerId(employer.getId());
+		cUser = confirmEmployerDao.getByEmployer_Id(employer.getId());
 		cUser.setConfirmed(true);
 		LocalDate e = (LocalDate.now());
 		cUser.setConfirmedDate(Date.valueOf(e));

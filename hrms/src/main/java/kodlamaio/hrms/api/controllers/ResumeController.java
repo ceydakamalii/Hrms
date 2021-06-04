@@ -4,6 +4,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -17,6 +18,8 @@ import kodlamaio.hrms.business.abstracts.ResumeService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.concretes.Resume;
+import kodlamaio.hrms.entities.dtos.ResumeAddDto;
+import kodlamaio.hrms.entities.dtos.ResumeDto;
 @RestController
 @RequestMapping("api/resumes")
 public class ResumeController {
@@ -30,14 +33,14 @@ public class ResumeController {
 	}
 	
 	@GetMapping("/getall")
-	public DataResult<List<Resume>> getAll(){
+	public DataResult<List<ResumeDto>> getAll(){
 		return this.resumeService.getAll();
 	}
 	
 	
 	@PostMapping("/add")
-	public Result add(@Valid @RequestBody Resume resume) {
-		return this.resumeService.add(resume);
+	public ResponseEntity<?> add(@Valid @RequestBody ResumeAddDto resumeAddDto) {
+		return ResponseEntity.ok(resumeService.add(resumeAddDto));
 	  }
 	
 	
@@ -46,6 +49,11 @@ public class ResumeController {
 	public Result saveImage(@RequestBody MultipartFile file,@RequestParam int resumeId) {
 		return this.resumeService.saveImage(file, resumeId);
 		
+	}
+	
+	@GetMapping("/getByCandidateId")
+	public DataResult<List<Resume>> findAllByCandidateId(@RequestParam("user_id") int candidateId) {
+		return this.resumeService.findAllByCandidateId(candidateId);
 	}
 	
 }

@@ -20,13 +20,13 @@ import java.util.List;
 public class CandidateFieldManager implements FieldService<Candidate> {
 	
 	
-	@Autowired
+	
 	private CandidateDao candidatesDao;
 	private UserDao userDao; 
 	private VerifyApiService<Candidate> verifyApiService;
 	private VerificationService verifyCodeService;
 	
-	
+	@Autowired
 	public CandidateFieldManager(CandidateDao candidatesDao, UserDao userDao, VerifyApiService<Candidate> verifyApiService, VerificationService verifyCodeService) {
 		super();
 		this.candidatesDao = candidatesDao;
@@ -43,10 +43,10 @@ public class CandidateFieldManager implements FieldService<Candidate> {
 		if (!this.verifyApiService.ApiControl(candidate)) {
 			return new ErrorResult("Mernis Kimlik Doğrulaması Başarısız Oldu");
 		}
-		if (this.userDao.findByMailEquals(candidate.getMail())) {
+		if (this.userDao.existsByMail(candidate.getMail())) {
 			return new ErrorResult("Mail Adresi Daha Önce Kullanıldı");
 		}
-		if (candidatesDao.findByNationalIdentityEquals(candidate.getNationalIdentity())) {
+		if (candidatesDao.existsByNationalIdentity(candidate.getNationalIdentity())) {
 			return new ErrorResult("TC Kimlik Numarası Daha Önce Kullanıldı");
 		}		
 		if (!candidate.getPassword().equals(candidate.getPasswordRepeat())) {

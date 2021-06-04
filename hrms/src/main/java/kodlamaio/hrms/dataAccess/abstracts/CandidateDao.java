@@ -7,6 +7,7 @@ import kodlamaio.hrms.entities.concretes.Candidate;
 @Repository
 public interface CandidateDao extends JpaRepository<Candidate, Integer>{
 	
-	boolean findByNationalIdentityEquals(String national_identity);
+	boolean existsByNationalIdentity(String national_identity);
+
 
 }

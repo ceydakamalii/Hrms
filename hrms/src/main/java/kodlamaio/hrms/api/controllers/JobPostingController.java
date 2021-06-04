@@ -40,6 +40,12 @@ public class JobPostingController {
 		return this.jobPostingService.add(jobPostingAddDto);
 	}
 	
+	@GetMapping("/getAll")
+	DataResult<List<JobPostingDto>> getAll(){
+		return this.jobPostingService.getAll();
+	}
+	
+	
 	
 	@GetMapping("/getActive/OrderByEndDate")
 	DataResult<List<JobPostingDto>> findByIsActiveOrderByClosedDate(){

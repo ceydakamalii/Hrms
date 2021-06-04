@@ -20,12 +20,12 @@ import kodlamaio.hrms.entities.concretes.Employer;
 @Service
 public class EmployerFieldManager implements FieldService<Employer> {
 
-	@Autowired
+	
 	private EmployerDao employerDao;
 	private UserDao userDao;
 	private VerificationService verifyCodeService;
 	private ConfirmEmployerByStaffUserService confirmEmployerService; 
-	
+	@Autowired
 	public EmployerFieldManager(EmployerDao employerDao, UserDao userDao, VerificationService verifyCodeService, ConfirmEmployerByStaffUserService confirmEmployerService) {
 		super();
 		this.employerDao = employerDao;
@@ -41,7 +41,7 @@ public class EmployerFieldManager implements FieldService<Employer> {
 		if (!splitMail[1].equals(employer.getWebAddress())) {
 			return new ErrorResult("Yalnızca Şirket Web Sitenizin Uzantısına Sahip Bir Mail Adresiyle Kayıt Olabilirsiniz");
 		}
-		if (this.userDao.findByMailEquals(employer.getMail())) {
+		if (this.userDao.existsByMail(employer.getMail())) {
 			return new ErrorResult("Mail Adresi Daha Önce Kullanıldı");
 		}
 		if (employer.getPassword().equals(employer.getPasswordRepeat()) == false) {

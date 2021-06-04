@@ -30,7 +30,7 @@ public class ConfirmEmployerByStaffUser {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	@JsonIgnore
-	private int Id;
+	private int id;
 	
 	@OneToOne(targetEntity = Employer.class)
 	@JoinColumn(name="employer_id", referencedColumnName="user_id")

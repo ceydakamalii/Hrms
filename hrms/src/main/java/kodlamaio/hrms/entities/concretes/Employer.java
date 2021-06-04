@@ -37,6 +37,6 @@ public class Employer extends User{
 	
 	@JsonIgnore
 	@Column(name="user_confirm")
-	private boolean userConfirm;
+	private boolean userConfirm=true;
 
 }

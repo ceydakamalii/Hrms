@@ -42,7 +42,7 @@ public class Language {
 	
 	@NotBlank(message="Boş Geçilemez")
 	@Column(name="lang_level")
-	private char langLevel;
+	private short langLevel;
 	
 	@Column(name="created_date")
 	private Date createdDate;

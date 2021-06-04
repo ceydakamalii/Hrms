@@ -17,9 +17,9 @@ import kodlamaio.hrms.entities.concretes.JobPosition;
 @Service
 public class JobTitleFieldManager implements FieldService<JobPosition>{
 	
-	@Autowired
-	private JobPositionDao jobPositionDao;
 	
+	private JobPositionDao jobPositionDao;
+	@Autowired
 	public JobTitleFieldManager(JobPositionDao jobPositionDao) {
 		super();
 		this.jobPositionDao = jobPositionDao;
@@ -28,7 +28,7 @@ public class JobTitleFieldManager implements FieldService<JobPosition>{
 	
 	@Override
 	public Result verifyData(JobPosition jobPosition) {
-		if (jobPositionDao.findByPositionEquals(jobPosition.getPosition())) {
+		if (jobPositionDao.existsByPosition(jobPosition.getPosition())) {
 			return new ErrorResult("Bu Pozisyon Daha Önce Kaydedildi");
 		}
 		

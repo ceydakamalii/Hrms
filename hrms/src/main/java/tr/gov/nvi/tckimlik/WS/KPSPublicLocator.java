@@ -139,4 +139,4 @@ if ("KPSPublicSoap".equals(portName)) {
         setEndpointAddress(portName.getLocalPart(), address);
     }
 
-}
+} 
