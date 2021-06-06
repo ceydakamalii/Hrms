@@ -41,11 +41,14 @@ public class EducationManager implements EducationService{
 	}
 	
 	@Override
-	public DataResult<List<EducationDto>> findAllByResumeIdOrderByStartedDateDesc(int id) {
-		List<Education> education = educationDao.findAllByResumeIdOrderByStartedDateDesc(id);
-		return new SuccessDataResult<List<EducationDto>>(
-				dtoConverterService.dtoConverter(education, EducationDto.class), "education tarihe göre sıralandı");
+	public DataResult<List<EducationDto>> findAllByResumeIdOrderByEndedDateDesc(int id) {
+		
+		return new SuccessDataResult<List<EducationDto>>(dtoConverterService.dtoConverter(educationDao.findAllByResumeIdOrderByEndedDateDesc(id), EducationDto.class));
 	}
 
-
+	
 }
+
+	
+
+

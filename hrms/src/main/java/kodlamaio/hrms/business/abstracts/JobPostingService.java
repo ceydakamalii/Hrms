@@ -10,7 +10,7 @@ import kodlamaio.hrms.entities.dtos.JobPostingDto;
 
 public interface JobPostingService {
 	
-	DataResult<List<JobPostingDto>> getAll();
+	
 	Result add(JobPostingAddDto jobPostingAddDto);
 	Result delete(JobPosting jobPosting);
 	DataResult<List<JobPostingDto>> findByIsActive();

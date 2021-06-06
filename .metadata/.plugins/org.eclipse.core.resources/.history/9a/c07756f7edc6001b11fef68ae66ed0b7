@@ -1,0 +1,22 @@
+package kodlamaio.hrms.entities.dtos;
+
+import javax.validation.constraints.NotBlank;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class TechnologyDto {
+	
+	@JsonIgnore
+	private int id;
+	private int resumeId;
+	@NotBlank(message = "Açıklama alanı boş bırakılamaz.")
+	private String description;
+	//@DateTimeFormat(pattern = "yyyy-MM-dd")
+	//private Date createdDate;
+
+}

@@ -12,7 +12,7 @@ public interface EducationService {
 	
 	DataResult<List<EducationDto>> getAll();
 	
-	DataResult<List<EducationDto>> findAllByResumeIdOrderByStartedDateDesc(int id);
+	DataResult<List<EducationDto>> findAllByResumeIdOrderByEndedDateDesc(int id);
 	
 
 }

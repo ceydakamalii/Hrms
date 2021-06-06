@@ -1,10 +1,11 @@
 package kodlamaio.hrms.entities.dtos;
 
+
+
 import java.sql.Date;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -22,7 +23,6 @@ public class LanguageDto {
 	@JsonIgnore
 	private int id;
 	private int resumeId;
-	@NotBlank(message = "Dil alanı boş bırakılamaz.")
 	private String language;
 	@Min(value = 1, message = "min 1")
 	@Max(value = 5, message = "max 5")

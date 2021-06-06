@@ -19,11 +19,11 @@ public class JobExperienceDto {
 	private int id;
 	private int resumeId;
 	private String companyName;
-	private int jobPositionId;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startedDate;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date endedDate;
+	private int jobPositionId;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date createdDate;
 	

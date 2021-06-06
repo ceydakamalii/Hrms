@@ -10,5 +10,6 @@ import kodlamaio.hrms.entities.concretes.Resume;
 public interface ResumeDao extends JpaRepository<Resume, Integer> {
 	
 	List<Resume> findAllByCandidateId(int candidateId);
+	//List<Resume> getByCandidateId(int candidateId);
 
 }

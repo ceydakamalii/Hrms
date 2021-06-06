@@ -32,7 +32,7 @@ public class Resume {
 	private int id;
 
 	@ManyToOne(targetEntity = Candidate.class)
-	@JoinColumn(name = "candidate_id", referencedColumnName = "user_id", nullable = false)
+	@JoinColumn(name = "candidate_id", referencedColumnName = "id", nullable = false)
 	private Candidate candidate;
 
 	@Column(name = "github_link")

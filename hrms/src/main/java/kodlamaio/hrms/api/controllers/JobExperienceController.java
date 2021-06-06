@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import kodlamaio.hrms.business.abstracts.JobExperienceService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
+import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.dtos.JobExperienceDto;
 
 @RestController
@@ -36,9 +37,9 @@ public class JobExperienceController {
 	
 	
 	@PostMapping("/add")
-	public ResponseEntity<?> add(@Valid @RequestBody JobExperienceDto jobExperienceDto) {
-		return ResponseEntity.ok(jobExperienceService.add(jobExperienceDto));
-	}
+	public Result add(@Valid @RequestBody JobExperienceDto jobExperienceDto) {
+		return this.jobExperienceService.add(jobExperienceDto);
+	  }
 	
 	@GetMapping("/ordeByStartedDateDesc")
 	public DataResult<List<JobExperienceDto>> findAllByResumeIdOrderByStartedDateDesc(int id) {

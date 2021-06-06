@@ -14,7 +14,8 @@ import kodlamaio.hrms.core.utilities.results.SuccessResult;
 import kodlamaio.hrms.dataAccess.abstracts.ResumeDao;
 import kodlamaio.hrms.entities.concretes.Resume;
 import kodlamaio.hrms.entities.dtos.ResumeAddDto;
-import kodlamaio.hrms.entities.dtos.ResumeDto;
+
+import kodlamaio.hrms.entities.dtos.ResumeGetDto;
 
 import java.util.List;
 import java.util.Map;
@@ -45,8 +46,11 @@ public class ResumeManager implements ResumeService {
 
 
 	@Override
-	public DataResult<List<ResumeDto>> getAll() {
-		return new SuccessDataResult<List<ResumeDto>>(dtoConverterService.dtoConverter(resumeDao.findAll(),ResumeDto.class ),"Data Listelendi");
+	public DataResult<List<ResumeGetDto>> getAll() {
+		return new SuccessDataResult<List<ResumeGetDto>>
+		(dtoConverterService.dtoConverter
+				(resumeDao.findAll(), ResumeGetDto.class)
+				,"Data Listelendi");
 	}
 
 	@Override
@@ -62,9 +66,11 @@ public class ResumeManager implements ResumeService {
 
 
 	@Override
-	public DataResult<List<Resume>> findAllByCandidateId(int candidateId) {
-		
-		return new SuccessDataResult<List<Resume>>(resumeDao.findAllByCandidateId(candidateId));
+	public DataResult<List<ResumeGetDto>> findAllByCandidateId(int candidateId) {
+		return new SuccessDataResult<List<ResumeGetDto>>
+		(dtoConverterService.dtoConverter
+				(resumeDao.findAllByCandidateId(candidateId), ResumeGetDto.class)
+				,"Data Listelendi");
 	}
 	
 	

@@ -6,25 +6,26 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import kodlamaio.hrms.business.abstracts.VerificationService;
+
+import kodlamaio.hrms.business.abstracts.VerifyCodeService;
 import kodlamaio.hrms.core.utilities.results.Result;
 
 @RestController
 @RequestMapping("/valid")
 public class VerifyCodeController {
 
-	private VerificationService verificationService;
+	private VerifyCodeService verifyCodeService;
 	
 	@Autowired
-	public VerifyCodeController(VerificationService verificationService) {
+	public VerifyCodeController(VerifyCodeService verifyCodeService) {
 		super();
-		this.verificationService = verificationService;
+		this.verifyCodeService = verifyCodeService;
 	}
 
 
 	@PutMapping("/{verifyCode}")
 	public Result update(@PathVariable("verifyCode") String verifyCode) {
-		return verificationService.verifyUser(verifyCode);
+		return verifyCodeService.verifyUser(verifyCode);
 	}
 	
 	

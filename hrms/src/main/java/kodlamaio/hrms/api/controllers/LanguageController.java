@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import kodlamaio.hrms.business.abstracts.LanguageService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
+import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.dtos.LanguageDto;
 
 @RestController
@@ -34,8 +35,8 @@ public class LanguageController {
 	
 	
 	@PostMapping("/add")
-	public ResponseEntity<?> add(@Valid @RequestBody LanguageDto languageDto) {
-		return ResponseEntity.ok(languageService.add(languageDto));
+	public Result add(@Valid @RequestBody LanguageDto languageDto) {
+		return this.languageService.add(languageDto);
 	  }
 
 }

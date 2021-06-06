@@ -1,23 +1,25 @@
 package kodlamaio.hrms.api.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import kodlamaio.hrms.business.abstracts.ConfirmEmployerByStaffUserService;
+import kodlamaio.hrms.business.abstracts.ConfirmEmployerService;
 import kodlamaio.hrms.core.utilities.results.Result;
 
 @RestController
 @RequestMapping("/validEmployer")
 public class ConfirmEmployerController {
 
-	private ConfirmEmployerByStaffUserService confirmEmployerService;
-
-	public ConfirmEmployerController(ConfirmEmployerByStaffUserService confirmEmployerService) {
+	private ConfirmEmployerService confirmEmployerService;
+	@Autowired
+	public ConfirmEmployerController(ConfirmEmployerService confirmEmployerService) {
 		super();
 		this.confirmEmployerService = confirmEmployerService;
 	}
+	
 	
 	
 	@PutMapping("/{companyName}")

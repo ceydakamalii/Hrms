@@ -5,9 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kodlamaio.hrms.business.abstracts.ConfirmEmployerByStaffUserService;
+import kodlamaio.hrms.business.abstracts.ConfirmEmployerService;
 import kodlamaio.hrms.business.abstracts.FieldService;
-import kodlamaio.hrms.business.abstracts.VerificationService;
+
+import kodlamaio.hrms.business.abstracts.VerifyCodeService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.ErrorResult;
 import kodlamaio.hrms.core.utilities.results.Result;
@@ -23,10 +24,10 @@ public class EmployerFieldManager implements FieldService<Employer> {
 	
 	private EmployerDao employerDao;
 	private UserDao userDao;
-	private VerificationService verifyCodeService;
-	private ConfirmEmployerByStaffUserService confirmEmployerService; 
+	private VerifyCodeService verifyCodeService;
+	private ConfirmEmployerService confirmEmployerService; 
 	@Autowired
-	public EmployerFieldManager(EmployerDao employerDao, UserDao userDao, VerificationService verifyCodeService, ConfirmEmployerByStaffUserService confirmEmployerService) {
+	public EmployerFieldManager(EmployerDao employerDao, UserDao userDao, VerifyCodeService verifyCodeService, ConfirmEmployerService confirmEmployerService) {
 		super();
 		this.employerDao = employerDao;
 		this.userDao = userDao;
