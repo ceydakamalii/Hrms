@@ -1,4 +1,5 @@
 package kodlamaio.hrms.api.controllers;
+
 import java.util.List;
 
 import javax.validation.Valid;
@@ -11,36 +12,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import kodlamaio.hrms.business.abstracts.JobPositionService;
+import kodlamaio.hrms.business.abstracts.EmployerService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
-import kodlamaio.hrms.entities.concretes.JobPosition;
+import kodlamaio.hrms.entities.concretes.Employer;
+
 @RestController
-@RequestMapping("/api/jobs")
+@RequestMapping("/api/employers")
+@CrossOrigin
+public class EmployerController {
 
-public class JobPositionController {
-	
-	
-	private JobPositionService jobPositionsService;
-	
-	
+	private EmployerService employerService;
 	@Autowired
-	public JobPositionController(JobPositionService jobPositionsService) {
+	public EmployerController(EmployerService employerService) {
 		super();
-		this.jobPositionsService = jobPositionsService;
-	}
-
-
-
-	@GetMapping("/getall")
-	public DataResult<List<JobPosition>> getAll(){
-		return this.jobPositionsService.getAll();
+		this.employerService = employerService;
 	}
 	
+	@GetMapping("/getall")
+	public DataResult<List<Employer>> getAll(){
+		return this.employerService.getAll();
+	}
 	
 	@PostMapping("/add")
-	public Result add(@Valid @RequestBody JobPosition newJobPositions) {
-		return this.jobPositionsService.add(newJobPositions);
-	  }
-	
+	public Result newEmployer(@Valid @RequestBody Employer employer) {
+		return employerService.add(employer);
+	}
 }

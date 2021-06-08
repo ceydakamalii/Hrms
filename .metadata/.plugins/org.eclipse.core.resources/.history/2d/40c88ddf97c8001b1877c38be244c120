@@ -22,8 +22,8 @@ private ModelMapper modelMapper;
 		
 	}
 	
-	@Override    //<T>-> Şuanki sınıf yani çevrilcek sınıf, source ise son hali sınıfın. Sınıf Döndürcek.
-	public <T> Object dtoClassConverter(Object source,Class<T> baseClass) { 
+	@Override    //<T>-> Şuanki sınıf yani çevrilcek sınıf, source ise son hali sınıfın. 
+	public <T> Object dtoClassConverter(Object source,Class<T> baseClass) { // Sınıf Döndürcek.
 		return modelMapper.map(source,baseClass);
 		
 	}

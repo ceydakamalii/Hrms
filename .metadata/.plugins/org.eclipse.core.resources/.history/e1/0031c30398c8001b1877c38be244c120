@@ -19,7 +19,7 @@ import kodlamaio.hrms.entities.dtos.JobPostingAddDto;
 import kodlamaio.hrms.entities.dtos.JobPostingDto;
 @RestController
 @RequestMapping("api/jobPostings")
-
+@CrossOrigin
 public class JobPostingController {
 
 	private JobPostingService jobPostingService;

@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ResumeAddDto {
+public class ResumeAddDto { //cv olusturmada kullanılan dto
 	
 	@JsonProperty(access = Access.READ_ONLY)
 	private int id;

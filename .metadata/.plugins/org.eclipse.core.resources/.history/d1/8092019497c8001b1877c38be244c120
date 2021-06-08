@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "resumes")
 
-public class Resume { //Cv
+public class Resume {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

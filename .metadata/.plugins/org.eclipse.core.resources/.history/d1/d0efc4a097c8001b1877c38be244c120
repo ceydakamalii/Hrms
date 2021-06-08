@@ -35,7 +35,7 @@ public class Candidate extends User{
 	private String surname;
 	
 	@NotBlank(message="TC Kimlik Numarası Alanı Boş Bırakılamaz !") 
-	@Size(min = 11, max=11, message = "TC kimlik no 11 karakterden oluşur !")
+	@Size(min = 11, max=11, message = "TC no 11 karakterden oluşur !")
 	@Column(name="national_identity")
 	private String nationalIdentity;
 	

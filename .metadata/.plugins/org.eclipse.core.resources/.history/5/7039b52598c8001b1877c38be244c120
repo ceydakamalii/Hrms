@@ -51,7 +51,7 @@ public class JobPostingManager implements JobPostingService {
 	@Override
 	public DataResult<List<JobPostingDto>> findByIsActiveOrderByClosedDate() {
 		return new SuccessDataResult<List<JobPostingDto>>
-		(this.dtoConverterService.dtoConverter(this.jobPostingDao.findByIsActiveOrderByClosedDate(true), JobPostingDto.class),"İş ilanları Listelendi");
+		(this.dtoConverterService.dtoConverter(this.jobPostingDao.findByIsActiveOrderByClosedDate(true), JobPostingDto.class),"Data Listelendi");
 	}
 	@Override
 	public DataResult<List<JobPostingDto>> findByIsActiveAndEmployer_CompanyName(String companyName) {
