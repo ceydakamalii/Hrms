@@ -58,8 +58,6 @@ public class CandidateFieldManager implements FieldService<Candidate> {
 		this.verifyCodeService.sendMail(candidate.getMail());
 		return new SuccessResult("Kayıt Başarılı");
 		
-		
-		
 	}
 
 

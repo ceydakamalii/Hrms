@@ -26,7 +26,7 @@ public class ResumeGetDto {
 	private String photo;
 	private String description;
 	private Date createdDate;
-	private Date updatedDate;
+	//private Date updatedDate;
 	private List<JobExperience> jobExperiences;
 	private List<Language> languages;
 	private List<Technology> technologies;

@@ -13,7 +13,7 @@ import kodlamaio.hrms.dataAccess.abstracts.JobPostingDao;
 import kodlamaio.hrms.entities.concretes.JobPosting;
 import kodlamaio.hrms.entities.dtos.JobPostingAddDto;
 import kodlamaio.hrms.entities.dtos.JobPostingDto;
-import org.modelmapper.ModelMapper;
+
 
 
 import java.util.List;
@@ -24,24 +24,17 @@ public class JobPostingManager implements JobPostingService {
 	
 	private JobPostingDao jobPostingDao;
 	private DtoConverterService dtoConverterService;
-	private ModelMapper modelMapper;
-	
+		
 	@Autowired
-	public JobPostingManager(JobPostingDao jobPostingDao, ModelMapper modelMapper, DtoConverterService dtoConverterService) {
+	public JobPostingManager(JobPostingDao jobPostingDao, DtoConverterService dtoConverterService) {
 		super();
 		this.jobPostingDao = jobPostingDao;
-		this.modelMapper = modelMapper;
 		this.dtoConverterService=dtoConverterService;
-	}
-	
-	private JobPosting dtoConvert(JobPostingAddDto jobPostingAddDto) {
-		return modelMapper.map(jobPostingAddDto, JobPosting.class);
-		
 	}
 	
 	@Override
 	public Result add(JobPostingAddDto jobPostingAddDto) {
-		this.jobPostingDao.save(dtoConvert(jobPostingAddDto));
+		this.jobPostingDao.save((JobPosting) dtoConverterService.dtoClassConverter(jobPostingAddDto, JobPosting.class));
 		return new SuccessResult("İş İlanı Eklendi");
 	}
 	@Override
@@ -52,7 +45,7 @@ public class JobPostingManager implements JobPostingService {
 	@Override
 	public DataResult<List<JobPostingDto>> findByIsActive() {
 		return new SuccessDataResult<List<JobPostingDto>>(dtoConverterService.dtoConverter
-				(jobPostingDao.findByIsActive(true), JobPostingDto.class));
+				(jobPostingDao.findByIsActive(true), JobPostingDto.class),"Aktif İş İlanları Listelendi");
 		
 	}
 	@Override

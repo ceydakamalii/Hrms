@@ -26,8 +26,8 @@ public class ResumeAddDto {
 	private String description;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date createdDate;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date updatedDate;
+	//@DateTimeFormat(pattern = "yyyy-MM-dd")
+	//private Date updatedDate;
 	
 
 }

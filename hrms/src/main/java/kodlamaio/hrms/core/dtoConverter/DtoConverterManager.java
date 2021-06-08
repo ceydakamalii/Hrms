@@ -16,14 +16,14 @@ private ModelMapper modelMapper;
 		this.modelMapper = modelMapper;
 	}
 
-	@Override
+	@Override  //verdiğimiz listeyi parametre olarak verdiğimiz classın yapısına çevirerek getirir.
 	public <S, T> List<T> dtoConverter(List<S> s, Class<T> targetClass){
 		return s.stream().map(element -> modelMapper.map(element, targetClass)).collect(Collectors.toList());
 		
 	}
 	
-	@Override
-	public <T> Object dtoClassConverter(Object source,Class<T> baseClass) {
+	@Override    //<T>-> Şuanki sınıf yani çevrilcek sınıf, source ise son hali sınıfın. 
+	public <T> Object dtoClassConverter(Object source,Class<T> baseClass) { // Sınıf Döndürcek.
 		return modelMapper.map(source,baseClass);
 		
 	}

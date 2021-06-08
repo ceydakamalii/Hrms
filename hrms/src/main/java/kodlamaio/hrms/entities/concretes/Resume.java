@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.UpdateTimestamp;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -49,7 +51,8 @@ public class Resume {
 
 	@Column(name = "created_date")
 	private Date createdDate;
-
+	
+	@UpdateTimestamp
 	@Column(name = "updated_date")
 	private Date updatedDate;
 
