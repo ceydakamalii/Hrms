@@ -15,13 +15,13 @@ export default function JobPostings() {
                     İŞ İLANLARI
                     <Table.Row>
                         
-                        <Table.HeaderCell>pozisyon</Table.HeaderCell>
-                        <Table.HeaderCell>companyName</Table.HeaderCell>
-                        <Table.HeaderCell>açıklama</Table.HeaderCell>
-                        <Table.HeaderCell>son başvuru tarihi</Table.HeaderCell>
-                        <Table.HeaderCell>açık pozisyon </Table.HeaderCell>
-                        <Table.HeaderCell>aktiflik</Table.HeaderCell>
-
+                        <Table.HeaderCell>Pozisyon</Table.HeaderCell>
+                        <Table.HeaderCell>Şirket</Table.HeaderCell>
+                        <Table.HeaderCell>Açıklama</Table.HeaderCell>
+                        <Table.HeaderCell>Maaş</Table.HeaderCell>
+                        <Table.HeaderCell>Son başvuru tarihi</Table.HeaderCell>
+                        <Table.HeaderCell>Açık pozisyon </Table.HeaderCell>
+                        
                     </Table.Row>
                 </Table.Header>
                 <Table.Body>
@@ -31,9 +31,10 @@ export default function JobPostings() {
                             <Table.Cell>{jobPosting.jobPositionPosition}</Table.Cell>
                             <Table.Cell>{jobPosting.employerCompanyName}</Table.Cell>
                             <Table.Cell>{jobPosting.description}</Table.Cell>
+                            <Table.Cell>{`${jobPosting.minSalary} - ${jobPosting.maxSalary}`}</Table.Cell>
                             <Table.Cell>{jobPosting.closedDate}</Table.Cell>
                             <Table.Cell>{jobPosting.openPositionNumber}</Table.Cell>
-                            <Table.Cell>{jobPosting.active}</Table.Cell>
+                            
                         </Table.Row>
                     ))}
                 </Table.Body>

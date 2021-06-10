@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Image, Item } from 'semantic-ui-react'
 import ResumeService from '../services/resumeService.js';
 import { Table } from 'semantic-ui-react'
 
@@ -9,7 +8,8 @@ export default function Resumes() {
         let resumeService = new ResumeService();
         resumeService.getResumes().then(result => setResumes(result.data.data))
     }, [])
-    const paragraph = <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+    //const paragraph = <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+    
     return (
         <div>
             <Table inverted celled fixed>
@@ -20,8 +20,8 @@ export default function Resumes() {
                         <Table.HeaderCell>Name</Table.HeaderCell>
                         <Table.HeaderCell>LinkedIn</Table.HeaderCell>
                         <Table.HeaderCell>GithubLink</Table.HeaderCell>
-                        <Table.HeaderCell>photoUrl</Table.HeaderCell>
-                        <Table.HeaderCell>description</Table.HeaderCell>
+                        <Table.HeaderCell>Photo</Table.HeaderCell>
+                        <Table.HeaderCell>Description</Table.HeaderCell>
                         <Table.HeaderCell>JobExperiences</Table.HeaderCell>
                         <Table.HeaderCell>JobPosition</Table.HeaderCell>
                       

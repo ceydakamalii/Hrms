@@ -1,9 +1,22 @@
-import React from 'react'
-import { Button, Dropdown, Menu } from 'semantic-ui-react'
+//import React from 'react'
+import React , {useState} from 'react'
+import { useHistory } from 'react-router-dom';
+import { Dropdown, Menu } from 'semantic-ui-react'
 import {Link, NavLink} from "react-router-dom";
 import { routes } from "../Routing"
+import SignedIn from './SignedIn';
+import SignedOut from './SignedOut';
 export default function Navi() {
-
+    const[isAuthenticated,setIsAuthenticated]=useState(false)
+    const history=useHistory();
+    function handleSignOut(params){ //Çıkış yap
+        setIsAuthenticated(false)
+        history.push("/")
+        
+    }
+    function handleSignIn(params){
+        setIsAuthenticated(true)
+    }
     return (
         <div>
             <Menu inverted size='massive'>
@@ -19,10 +32,11 @@ export default function Navi() {
                         </Dropdown.Menu>
                     </Dropdown>
                     <Menu.Item>
-                        <Button primary>Sign Up</Button>
+                        {isAuthenticated?<SignedIn signOut={handleSignOut} bisey="1"/>:<SignedOut signIn={handleSignIn} bisey="1"/>}
                     </Menu.Item>
                 </Menu.Menu>
             </Menu>
+
         </div>
     )
 }

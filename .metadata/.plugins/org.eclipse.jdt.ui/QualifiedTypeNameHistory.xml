@@ -30,7 +30,6 @@
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
-    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.NotBlank"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="kodlamaio.hrms.entities.dtos.JobExperienceDto"/>
@@ -44,8 +43,6 @@
     <fullyQualifiedTypeName name="kodlamaio.hrms.entities.concretes.Technology"/>
     <fullyQualifiedTypeName name="kodlamaio.hrms.entities.dtos.TechnologyDto"/>
     <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
-    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonProperty.Access"/>
-    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonProperty"/>
     <fullyQualifiedTypeName name="kodlamaio.hrms.dataAccess.abstracts.VerifyCodeDao"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="kodlamaio.hrms.entities.concretes.VerifyCode"/>
@@ -60,4 +57,7 @@
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.UpdateTimestamp"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonProperty"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonProperty.Access"/>
 </qualifiedTypeNameHistroy>

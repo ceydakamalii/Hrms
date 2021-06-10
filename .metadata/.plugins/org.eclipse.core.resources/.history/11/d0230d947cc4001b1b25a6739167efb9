@@ -1,5 +1,0 @@
-package kodlamaio.hrms.adapters.service;
-
-public interface VerifyApiService {
-
-}
