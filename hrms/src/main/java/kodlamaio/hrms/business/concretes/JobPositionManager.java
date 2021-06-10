@@ -33,6 +33,7 @@ public class JobPositionManager implements JobPositionService {
 	@Override
 	public Result add(JobPosition jobPositions) {
 		return controllerService.verifyData(jobPositions);
+	
 	}
 
 }

@@ -19,7 +19,7 @@ import kodlamaio.hrms.entities.concretes.Employer;
 
 @RestController
 @RequestMapping("/api/employers")
-
+@CrossOrigin
 public class EmployerController {
 
 	private EmployerService employerService;

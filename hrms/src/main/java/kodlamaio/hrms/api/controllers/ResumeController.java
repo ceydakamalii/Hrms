@@ -22,7 +22,7 @@ import kodlamaio.hrms.entities.dtos.ResumeAddDto;
 import kodlamaio.hrms.entities.dtos.ResumeGetDto;
 @RestController
 @RequestMapping("api/resumes")
-
+@CrossOrigin
 public class ResumeController {
 	
 	private ResumeService resumeService;
