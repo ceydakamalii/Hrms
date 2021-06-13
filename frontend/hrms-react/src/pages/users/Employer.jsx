@@ -11,7 +11,6 @@ export default function Employer() {
         <div>
             <Table inverted celled fixed>
                 <Table.Header>
-                    İŞ VERENLER
                     <Table.Row>
                         <Table.HeaderCell>E-mail</Table.HeaderCell>
                         <Table.HeaderCell>ŞİRKET ADI</Table.HeaderCell>

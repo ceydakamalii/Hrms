@@ -24,6 +24,7 @@ public class JobPostingDto {
 	private String description;
 	private int minSalary;
 	private int maxSalary;
+	private String cityName;
 	private boolean isActive;
 	
 	

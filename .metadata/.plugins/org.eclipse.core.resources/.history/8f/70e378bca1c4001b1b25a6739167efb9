@@ -1,5 +1,0 @@
-package kodlamaio.hrms.core.cloudinary;
-
-public interface CloudinaryService {
-
-}

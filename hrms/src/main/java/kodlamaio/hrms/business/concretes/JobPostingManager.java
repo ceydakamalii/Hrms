@@ -59,6 +59,12 @@ public class JobPostingManager implements JobPostingService {
 		(this.dtoConverterService.dtoConverter(this.jobPostingDao.findByIsActiveAndEmployer_CompanyName(true, companyName), JobPostingDto.class),"Data Listelendi");
 	}
 
+	@Override
+	public DataResult<List<JobPostingDto>> findByCity_Name(String name) {
+		return new SuccessDataResult<List<JobPostingDto>>
+		(this.dtoConverterService.dtoConverter(this.jobPostingDao.findByCity_Name(name), JobPostingDto.class),"Data Listelendi");
+	}
+
 	
 }
 

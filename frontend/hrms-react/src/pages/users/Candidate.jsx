@@ -10,8 +10,8 @@ export default function Candidate() {
     return (
         <div>
             <Table inverted celled fixed>
+                
                 <Table.Header>
-                    İŞ ARAYANLAR
                     <Table.Row>
                         <Table.HeaderCell>E-mail</Table.HeaderCell>
                         <Table.HeaderCell>AD</Table.HeaderCell>

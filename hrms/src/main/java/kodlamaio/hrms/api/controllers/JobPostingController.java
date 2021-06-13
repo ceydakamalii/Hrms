@@ -53,4 +53,8 @@ public class JobPostingController {
 		return this.jobPostingService.findByIsActiveAndEmployer_CompanyName(companyName);
 		
 	}
+	@GetMapping("/get/City/jobPosting")
+	DataResult<List<JobPostingDto>> findByCity_Name(String name){
+		return this.jobPostingService.findByCity_Name(name);
+	}
 }

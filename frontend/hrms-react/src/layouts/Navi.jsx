@@ -1,41 +1,77 @@
 //import React from 'react'
-import React , {useState} from 'react'
-import { useHistory } from 'react-router-dom';
-import { Dropdown, Menu } from 'semantic-ui-react'
-import {Link, NavLink} from "react-router-dom";
-import { routes } from "../Routing"
-import SignedIn from './SignedIn';
-import SignedOut from './SignedOut';
+import React from 'react';
+import { Link } from "react-router-dom";
+import { Navbar, Container, Nav, Button, Jumbotron, Form, FormControl, NavDropdown, Dropdown, ButtonGroup } from 'react-bootstrap';
+
 export default function Navi() {
-    const[isAuthenticated,setIsAuthenticated]=useState(false)
-    const history=useHistory();
-    function handleSignOut(params){ //Çıkış yap
-        setIsAuthenticated(false)
-        history.push("/")
-        
-    }
-    function handleSignIn(params){
-        setIsAuthenticated(true)
-    }
+
+
     return (
         <div>
-            <Menu inverted size='massive'>
-                {routes.map(route => (
-                    <Menu.Item key={route.title} name={route.title}> <Link to={route.path}>{route.title}</Link> </Menu.Item>
-                ))}
-                <Menu.Menu position='right'>
-                    <Dropdown item text='Language'>
-                        <Dropdown.Menu>
-                            <Dropdown.Item as={NavLink} to="/jobPosting">İş ilanları</Dropdown.Item>
-                            <Dropdown.Item as={NavLink} to="/resume">Açık Cv'ler</Dropdown.Item>
-                            <Dropdown.Item as={NavLink} to="/jobPosition">Pozisyonlar</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                    <Menu.Item>
-                        {isAuthenticated?<SignedIn signOut={handleSignOut} bisey="1"/>:<SignedOut signIn={handleSignIn} bisey="1"/>}
-                    </Menu.Item>
-                </Menu.Menu>
-            </Menu>
+            <Navbar bg="light" expand="lg">
+                <Container>
+                    <Navbar.Brand href="#" className="h1" style={{ fontSize: '3rem' }}>H R M S</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="navbarScroll" />
+                    <Navbar.Collapse id="navbarScroll">
+                        <Nav
+                            className="ml-auto my-5 my-lg-3"
+                            style={{ maxHeight: '100px' }}
+                            navbarScroll
+                        >
+
+                            <Nav  className="h4 mr-4"><Link to={'/'} style={{ textDecoration: 'none' ,color:'black'}}>Home</Link></Nav>
+                            <Nav className="h4 mr-4"><Link to={'/resumes'} style={{ textDecoration: 'none' ,color:'black'}}>Resume</Link></Nav>
+                            <Nav className="h4 mr-4"><Link to={'/jobPostings'} style={{ textDecoration: 'none' ,color:'black'}}>JobPosting</Link></Nav>
+                            <Nav className="h4 mr-4"><Link to={'/candidates'} style={{ textDecoration: 'none' ,color:'black'}}>Candidate</Link></Nav>
+                            <Nav className="h4 mr-4"><Link to={'/employers'} style={{ textDecoration: 'none' ,color:'black'}}>Employer</Link></Nav>
+                        </Nav>
+
+
+
+                        <Dropdown as={ButtonGroup} className='mr-2 ml-3'>
+                            <Button variant="success">Login</Button>
+
+                            <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item href="#/action-1">Employer</Dropdown.Item>
+                                <Dropdown.Item href="#/action-2">Candidate</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+
+                        <Dropdown as={ButtonGroup}>
+                            <Button variant="outline-success">SignUp</Button>
+
+                            <Dropdown.Toggle split variant="outline-success" id="dropdown-split-basic" />
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item href="#/action-1">Employer</Dropdown.Item>
+                                <Dropdown.Item href="#/action-2">Candidate</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+            <Jumbotron>
+                <h1 className='h1' style={{ fontSize: '3rem' }}>Hello, world!</h1>
+                <h5>
+                    This is a simple hero unit, a simple jumbotron-style component for calling
+                    extra attention to featured content or information.
+                </h5>
+                <Form className="d-inline-flex">
+                    <FormControl
+                        type="search"
+                        placeholder="City"
+                        className="mr-4 ml-4"
+                        aria-label="Search"
+                    />
+                    <Button variant="success">Search</Button>
+                </Form>
+
+
+            </Jumbotron>
+
 
         </div>
     )

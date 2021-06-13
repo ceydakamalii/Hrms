@@ -14,23 +14,19 @@ export default function Resumes() {
         <div>
             <Table inverted celled fixed>
                 <Table.Header>
-                    CV'LER
-                    <Table.Row>
-                        
+                    <Table.Row>    
                         <Table.HeaderCell>Name</Table.HeaderCell>
                         <Table.HeaderCell>LinkedIn</Table.HeaderCell>
                         <Table.HeaderCell>GithubLink</Table.HeaderCell>
                         <Table.HeaderCell>Photo</Table.HeaderCell>
                         <Table.HeaderCell>Description</Table.HeaderCell>
                         <Table.HeaderCell>JobExperiences</Table.HeaderCell>
-                        <Table.HeaderCell>JobPosition</Table.HeaderCell>
-                      
+                        <Table.HeaderCell>JobPosition</Table.HeaderCell>        
                     </Table.Row>
                 </Table.Header>
                 <Table.Body>
                     {resumes.map((resume) => (
                         <Table.Row key={resume.id}>
-                            
                             <Table.Cell>{resume.candidateName}</Table.Cell>
                             <Table.Cell>{resume.linkedLink}</Table.Cell>
                             <Table.Cell>{resume.githubLink}</Table.Cell>

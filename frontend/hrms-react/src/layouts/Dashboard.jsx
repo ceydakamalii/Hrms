@@ -1,16 +1,28 @@
-import { Grid } from "semantic-ui-react";
-export default function Dashboard({ children }) {
+import React from 'react'
+import {Route} from 'react-router'
+import SideBar from "./SideBar";
+import { Row, Col } from 'react-bootstrap';
+import JobPostings from '../pages/JobPostings';
+import Resumes from '../pages/Resumes';
+import Employer from '../pages/users/Employer';
+import Candidate from '../pages/users/Candidate'
+export default function Dashboard() {
 
     return (
         <div>
-            {children}
-            <Grid>
-                <Grid.Row>
-                    <Grid.Column width={1}></Grid.Column>
-                    <Grid.Column width={12}>
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
+
+            <Row>
+                <Col xs={12} md={3}>
+                    <SideBar />
+                </Col>
+                <Col xs={12} md={9}>
+                    <Route exact path="/" component={JobPostings} />
+                    <Route exact path="/resumes" component={Resumes} />
+                    <Route exact path="/jobPostings" component={JobPostings} />
+                    <Route exact path="/employers" component={Employer} />
+                    <Route exact path="/candidates" component={Candidate} />
+                </Col>
+            </Row>
         </div>
     )
 }
