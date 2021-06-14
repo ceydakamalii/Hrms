@@ -6,6 +6,7 @@ import JobPostings from '../pages/JobPostings';
 import Resumes from '../pages/Resumes';
 import Employer from '../pages/users/Employer';
 import Candidate from '../pages/users/Candidate'
+import PostCandidate from '../pages/users/PostCandidate';
 export default function Dashboard() {
 
     return (
@@ -21,6 +22,7 @@ export default function Dashboard() {
                     <Route exact path="/jobPostings" component={JobPostings} />
                     <Route exact path="/employers" component={Employer} />
                     <Route exact path="/candidates" component={Candidate} />
+                    <Route exact path="/addCandidate" component={PostCandidate}></Route>
                 </Col>
             </Row>
         </div>
