@@ -39,6 +39,14 @@ public class JobPosting {
 	@JoinColumn(name = "city_id", referencedColumnName =  "id" ,nullable = false)
 	private City city;
 	
+	@ManyToOne(targetEntity = WorkPlace.class ,fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "work_place_id", referencedColumnName =  "id" ,nullable = false)
+	private WorkPlace workPlace;
+	
+	@ManyToOne(targetEntity = WorkTime.class ,fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "work_time_id", referencedColumnName =  "id" ,nullable = false)
+	private WorkTime workTime;
+	
 	@Column(name="min_salary")
 	private int minSalary;
 	

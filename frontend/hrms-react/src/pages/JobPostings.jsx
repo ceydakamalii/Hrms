@@ -11,11 +11,11 @@ export default function JobPostings() {
         <div>
 
             {jobPostings.map((jobPosting) => (
-                <Card className='mb-3'>
+                <Card className='mb-3' key={jobPosting.id}>
                     <Card.Header>Featured</Card.Header>
 
 
-                    <Card.Body key={jobPosting.id}>
+                    <Card.Body>
                         <Card.Title>{jobPosting.jobPositionPosition}</Card.Title>
                         <Card.Text>
                             {jobPosting.description}

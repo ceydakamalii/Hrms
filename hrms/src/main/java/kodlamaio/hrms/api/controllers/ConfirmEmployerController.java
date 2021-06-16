@@ -1,6 +1,7 @@
 package kodlamaio.hrms.api.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import kodlamaio.hrms.core.utilities.results.Result;
 
 @RestController
 @RequestMapping("/validEmployer")
+@CrossOrigin
 public class ConfirmEmployerController {
 
 	private ConfirmEmployerService confirmEmployerService;

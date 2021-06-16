@@ -1,12 +1,6 @@
 package kodlamaio.hrms.entities.dtos;
 
 import java.sql.Date;
-
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -25,6 +19,8 @@ public class JobPostingAddDto {
 	private int minSalary;
 	private int maxSalary;
 	private int cityId;
+	private int workPlaceId;
+	private int workTimeId;
 	private Date createdDate;
 	private Date closedDate;
 	private String description;

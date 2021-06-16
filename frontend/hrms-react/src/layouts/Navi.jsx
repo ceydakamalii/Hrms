@@ -46,7 +46,7 @@ export default function Navi() {
 
                             <Dropdown.Menu>
                                 <Dropdown.Item href="#/action-1"><Link>Employer</Link></Dropdown.Item>
-                                <Dropdown.Item><Link to={"/addCandidate"}>Candidate</Link></Dropdown.Item>
+                                <Dropdown.Item><Link>Candidate</Link></Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
 

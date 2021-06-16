@@ -15,6 +15,7 @@ public class EmployerManager implements EmployerService {
 
 	private FieldService<Employer> controllerService;
 	
+	
 	@Autowired
 	public EmployerManager(FieldService<Employer> controllerService) {
 		super();
@@ -30,6 +31,8 @@ public class EmployerManager implements EmployerService {
 	public Result add(Employer employer) {
 		return this.controllerService.verifyData(employer);
 	}
+
+
 	
 	
 

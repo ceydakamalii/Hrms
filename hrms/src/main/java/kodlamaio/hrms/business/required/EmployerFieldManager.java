@@ -60,6 +60,8 @@ public class EmployerFieldManager implements FieldService<Employer> {
 		return new SuccessDataResult<List<Employer>>(this.employerDao.findAll(),"Listeleme Başarılı");
 	}
 	
+
+	
 	
 	
 }

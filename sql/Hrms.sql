@@ -5,13 +5,12 @@ BEGIN;
 
 CREATE TABLE public.candidate_users
 (
-    user_id integer NOT NULL,
+    id integer NOT NULL,
     name character varying(50) NOT NULL,
     surname character varying(50) NOT NULL,
     national_identity character varying(11) NOT NULL,
     birth_year character varying(4) NOT NULL,
-    verify boolean,
-    PRIMARY KEY (user_id)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE public.cities
@@ -26,7 +25,7 @@ CREATE TABLE public.confirm_employer_users
     id integer NOT NULL,
     employer_id integer NOT NULL,
     confirmed_staff_user integer,
-    confirmed_date timestamp with time zone,
+    confirmed_date date,
     is_confirmed boolean,
     PRIMARY KEY (id)
 );
@@ -44,7 +43,6 @@ CREATE TABLE public.employer_users
     company_name character varying(100) NOT NULL,
     web_address character varying(50) NOT NULL,
     phone_number character varying(11) NOT NULL,
-    verify boolean,
     user_confirm boolean,
     PRIMARY KEY (user_id)
 );
@@ -69,6 +67,8 @@ CREATE TABLE public.job_postings
     closed_date date,
     is_active boolean NOT NULL,
     employer_id integer NOT NULL,
+    work_place_id integer,
+    work_time_id integer,
     PRIMARY KEY (id)
 );
 
@@ -102,8 +102,8 @@ CREATE TABLE public.resume_langs
     id integer NOT NULL,
     resume_id integer NOT NULL,
     language character varying NOT NULL,
-    lang_level character(1) NOT NULL,
     created_date date NOT NULL,
+    lang_level smallint NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -147,6 +147,7 @@ CREATE TABLE public.users
     id integer NOT NULL,
     mail character varying(50) NOT NULL,
     password character varying(16) NOT NULL,
+    verify boolean,
     PRIMARY KEY (id)
 );
 
@@ -161,27 +162,29 @@ CREATE TABLE public.users_verify
     PRIMARY KEY (id)
 );
 
+CREATE TABLE public.work_place
+(
+    id integer NOT NULL,
+    name character varying(100) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE public.work_time
+(
+    id integer NOT NULL,
+    name character varying(100) NOT NULL,
+    PRIMARY KEY (id)
+);
+
 ALTER TABLE public.candidate_users
-    ADD FOREIGN KEY (user_id)
+    ADD FOREIGN KEY (id)
     REFERENCES public.users (id)
-    NOT VALID;
-
-
-ALTER TABLE public.confirm_employer_users
-    ADD FOREIGN KEY (confirmed_staff_user)
-    REFERENCES public.staff_users (user_id)
     NOT VALID;
 
 
 ALTER TABLE public.confirm_employer_users
     ADD FOREIGN KEY (employer_id)
     REFERENCES public.employer_users (user_id)
-    NOT VALID;
-
-
-ALTER TABLE public.confirm_employer_users
-    ADD FOREIGN KEY (id)
-    REFERENCES public.users_verify (id)
     NOT VALID;
 
 
@@ -224,6 +227,12 @@ ALTER TABLE public.resume_langs
 ALTER TABLE public.resume_techs
     ADD FOREIGN KEY (resume_id)
     REFERENCES public.resumes (id)
+    NOT VALID;
+
+
+ALTER TABLE public.resumes
+    ADD FOREIGN KEY (candidate_id)
+    REFERENCES public.candidate_users (id)
     NOT VALID;
 
 

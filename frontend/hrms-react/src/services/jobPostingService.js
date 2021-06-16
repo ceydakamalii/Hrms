@@ -7,4 +7,8 @@ export default class JobPostingService {
     getByCity_Name(cityName){
         return axios.get("jobPostings/get/City/jobPosting")
     }
+
+    addJobPosting(values){
+        return axios.post("/jobPostings/add",values)
+    }
 }

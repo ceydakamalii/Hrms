@@ -66,4 +66,6 @@ public class CandidateFieldManager implements FieldService<Candidate> {
 	public DataResult<List<Candidate>> getAll() {
 		return new SuccessDataResult<List<Candidate>>(this.candidatesDao.findAll(),"Aday Listeleme Başarılı");
 	}
+	
+	
 }
