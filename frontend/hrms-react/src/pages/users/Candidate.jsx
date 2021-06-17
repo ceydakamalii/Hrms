@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import CandidateService from '../../services/candidateService';
-import { Table } from 'semantic-ui-react'
+import { Header, Image, Button, Icon } from 'semantic-ui-react'
+import { Table } from 'react-bootstrap'
+import { NavLink } from "react-router-dom";
 export default function Candidate() {
     const [candidates, setCandidates] = useState([]);
     useEffect(() => {
@@ -9,31 +11,51 @@ export default function Candidate() {
     }, [])
     return (
         <div>
-            <Table inverted celled fixed>
-                
-                <Table.Header>
-                    <Table.Row>
-                        <Table.HeaderCell>E-mail</Table.HeaderCell>
-                        <Table.HeaderCell>AD</Table.HeaderCell>
-                        <Table.HeaderCell>SOYAD</Table.HeaderCell>
-                        <Table.HeaderCell>TC KİMLİK</Table.HeaderCell>
-                        <Table.HeaderCell>DOĞUM TARİHİ</Table.HeaderCell>
-
-                    </Table.Row>
-                </Table.Header>
-                <Table.Body>
+            <Table striped bordered hover className="table-light table-responsive border-success">
+                <thead>
+                    <tr>
+                        <th>E-Mail</th>
+                        <th>AD</th>
+                        <th>SOYAD</th>
+                        <th>TC KİMLİK</th>
+                        <th>DOĞUM TARİHİ</th>
+                        <th>İncele</th>
+                    </tr>
+                </thead>
+                <tbody>
                     {candidates.map((candidate) => (
-                        <Table.Row key={candidate.id}>
-                            <Table.Cell>{candidate.mail}</Table.Cell>
-                            <Table.Cell>{candidate.name}</Table.Cell>
-                            <Table.Cell>{candidate.surname}</Table.Cell>
-                            <Table.Cell>{candidate.nationalIdentity}</Table.Cell>
-                            <Table.Cell>{candidate.birth_year}</Table.Cell>
+                        <tr key={candidate.id}>
+                            <td>
+                                {candidate.mail}
+                            </td>
+                            <td>
+                                {candidate.name}
+                            </td>
+                            <td>
+                                {candidate.surname}
+                            </td>
+                            <td>
+                                {candidate.nationalIdentity}
+                            </td>
+                            <td>
+                                {candidate.birth_year}
+                            </td>
+                            <td>
+                                <Button animated as={NavLink} to={"/"}>
+                                    <Button.Content visible>İncele</Button.Content>
+                                    <Button.Content hidden>
+                                        <Icon name="arrow right" />
+                                    </Button.Content>
+                                </Button>
+                            </td>
 
-                        </Table.Row>
+                        </tr>
                     ))}
-                </Table.Body>
+
+
+                </tbody>
             </Table>
+
         </div>
     )
 }

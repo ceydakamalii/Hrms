@@ -15,7 +15,7 @@ export default function Resumes() {
     return (
         <div>
 
-            <Table striped bordered hover variant="grey">
+            <Table striped bordered hover className="table-light table-responsive border-success">
                 <thead>
                     <tr>
                         <th>Aday</th>

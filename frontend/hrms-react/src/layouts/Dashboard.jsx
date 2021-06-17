@@ -8,6 +8,8 @@ import Employer from '../pages/users/Employer';
 import Candidate from '../pages/users/Candidate'
 import ResumeDetail from '../pages/ResumeDetail';
 import AddJobPosting from '../pages/AddJobPosting';
+import AddCandidate from '../pages/users/AddCandidate';
+import AddEmployer from '../pages/users/AddEmployer';
 
 
 export default function Dashboard() {
@@ -27,6 +29,8 @@ export default function Dashboard() {
                     <Route exact path="/candidates" component={Candidate} />
                     <Route exact path="/resume/candidate/:candidateId" component={ResumeDetail} />
                     <Route exact path="/addjobPosting" component={AddJobPosting}/>
+                    <Route exact path="/addCandidate" component={AddCandidate}/>
+                    <Route exact path="/addEmployer" component={AddEmployer}/>
                 </Col>
             </Row>
         </div>

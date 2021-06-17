@@ -6,7 +6,7 @@ import { ListGroup } from 'react-bootstrap';
 export default function Sidebar() {
     return (
         <div>
-            <ListGroup>
+            <ListGroup >
                 <ListGroup.Item style={{color:"black"}} action variant="success">
                     İş İlanları
                 </ListGroup.Item>

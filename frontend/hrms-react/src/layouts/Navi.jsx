@@ -34,8 +34,8 @@ export default function Navi() {
                             <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">Employer</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Candidate</Dropdown.Item>
+                                <Dropdown.Item>Employer</Dropdown.Item>
+                                <Dropdown.Item>Candidate</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
 
@@ -45,8 +45,8 @@ export default function Navi() {
                             <Dropdown.Toggle split variant="outline-success" id="dropdown-split-basic" />
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1"><Link>Employer</Link></Dropdown.Item>
-                                <Dropdown.Item><Link>Candidate</Link></Dropdown.Item>
+                                <Dropdown.Item><Link to="/addEmployer">Employer</Link></Dropdown.Item>
+                                <Dropdown.Item><Link to="/addCandidate">Candidate</Link></Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
 
