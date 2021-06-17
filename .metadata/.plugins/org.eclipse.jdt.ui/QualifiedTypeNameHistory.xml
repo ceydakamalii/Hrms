@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="kodlamaio.hrms.entities.dtos.EducationDto"/>
-    <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
-    <fullyQualifiedTypeName name="javax.persistence.PrimaryKeyJoinColumn"/>
     <fullyQualifiedTypeName name="kodlamaio.hrms.entities.concretes.JobExperience"/>
     <fullyQualifiedTypeName name="kodlamaio.hrms.entities.concretes.Language"/>
     <fullyQualifiedTypeName name="kodlamaio.hrms.entities.concretes.Education"/>
@@ -48,7 +45,6 @@
     <fullyQualifiedTypeName name="kodlamaio.hrms.dataAccess.abstracts.WorkPlaceDao"/>
     <fullyQualifiedTypeName name="kodlamaio.hrms.dataAccess.abstracts.WorkTimeDao"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-    <fullyQualifiedTypeName name="kodlamaio.hrms.core.utilities.results.SuccessDataResult"/>
     <fullyQualifiedTypeName name="kodlamaio.hrms.business.abstracts.WorkPlaceService"/>
     <fullyQualifiedTypeName name="kodlamaio.hrms.entities.concretes.WorkPlace"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
@@ -60,4 +56,8 @@
     <fullyQualifiedTypeName name="kodlamaio.hrms.core.utilities.results.DataResult"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="kodlamaio.hrms.entities.concretes.WorkTime"/>
+    <fullyQualifiedTypeName name="kodlamaio.hrms.entities.concretes.JobPosting"/>
+    <fullyQualifiedTypeName name="kodlamaio.hrms.dataAccess.abstracts.EmployerDao"/>
+    <fullyQualifiedTypeName name="kodlamaio.hrms.core.utilities.results.SuccessDataResult"/>
+    <fullyQualifiedTypeName name="kodlamaio.hrms.entities.concretes.Resume"/>
 </qualifiedTypeNameHistroy>

@@ -38,4 +38,9 @@ public class EmployerController {
 	public Result newEmployer(@Valid @RequestBody Employer employer) {
 		return employerService.add(employer);
 	}
+	
+	@GetMapping("/getById")
+    DataResult<Employer> findById(int id){
+        return this.employerService.getById(id);
+    }
 }

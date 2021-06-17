@@ -65,6 +65,12 @@ public class JobPostingManager implements JobPostingService {
 		(this.dtoConverterService.dtoConverter(this.jobPostingDao.findByCity_Name(name), JobPostingDto.class),"Data Listelendi");
 	}
 
+	@Override
+	public DataResult<JobPosting> getById(int id) {
+		
+		return new SuccessDataResult<JobPosting>(jobPostingDao.getById(id), "Data Listelendi");
+	}
+
 	
 }
 

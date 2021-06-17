@@ -10,6 +10,9 @@ import ResumeDetail from '../pages/ResumeDetail';
 import AddJobPosting from '../pages/AddJobPosting';
 import AddCandidate from '../pages/users/AddCandidate';
 import AddEmployer from '../pages/users/AddEmployer';
+import LoginCandidate from '../pages/users/LoginCandidate';
+import JobPostingDetail from '../pages/JobPostingDetail';
+import EmployerDetail from '../pages/EmployerDetail';
 
 
 export default function Dashboard() {
@@ -31,6 +34,9 @@ export default function Dashboard() {
                     <Route exact path="/addjobPosting" component={AddJobPosting}/>
                     <Route exact path="/addCandidate" component={AddCandidate}/>
                     <Route exact path="/addEmployer" component={AddEmployer}/>
+                    <Route exact path="/loginCandidate" component={LoginCandidate}/>
+                    <Route exact path="/jobPosting/:id" component={JobPostingDetail}/>
+                    <Route exact path="/employers/:id" component={EmployerDetail}/>
                 </Col>
             </Row>
         </div>

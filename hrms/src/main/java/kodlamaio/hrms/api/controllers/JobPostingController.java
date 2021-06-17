@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlamaio.hrms.business.abstracts.JobPostingService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
+import kodlamaio.hrms.entities.concretes.JobPosting;
 import kodlamaio.hrms.entities.dtos.JobPostingAddDto;
 import kodlamaio.hrms.entities.dtos.JobPostingDto;
 @RestController
@@ -56,5 +57,9 @@ public class JobPostingController {
 	@GetMapping("/get/City/jobPosting")
 	DataResult<List<JobPostingDto>> findByCity_Name(String name){
 		return this.jobPostingService.findByCity_Name(name);
+	}
+	@GetMapping("/getById")
+	DataResult<JobPosting> findById(int id){
+		return this.jobPostingService.getById(id);
 	}
 }

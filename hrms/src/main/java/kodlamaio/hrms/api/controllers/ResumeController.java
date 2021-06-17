@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import kodlamaio.hrms.business.abstracts.ResumeService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
+import kodlamaio.hrms.entities.concretes.Resume;
 import kodlamaio.hrms.entities.dtos.ResumeAddDto;
 
 import kodlamaio.hrms.entities.dtos.ResumeGetDto;
@@ -39,7 +40,7 @@ public class ResumeController {
 		return this.resumeService.getAll();
 	}
 	
-	@GetMapping("/getByCandidateId")
+	@GetMapping("/getByCandidateIdList")
 	public DataResult<List<ResumeGetDto>> findAllByCandidateId(int id){
 		return this.resumeService.findAllByCandidateId(id);
 	}
@@ -56,6 +57,11 @@ public class ResumeController {
 	public Result saveImage(@RequestBody MultipartFile file,@RequestParam int resumeId) {
 		return this.resumeService.saveImage(file, resumeId);
 		
+	}
+	
+	@GetMapping("/getByCandidateId")
+	public DataResult<Resume> getByCandidateId(int candidateId) {
+		return this.resumeService.getByCandidateId(candidateId);
 	}
 	
 }

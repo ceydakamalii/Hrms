@@ -6,5 +6,8 @@ export default class EmployerService {
     addEmployer(values){
         return axios.post("/employers/add",values)
     }
+    getByEmployerId(id){
+        return axios.get("/employers/getById?id="+id)
+    }
     
 }

@@ -16,6 +16,7 @@ public class JobPostingDto {
 
     @JsonProperty(access = Access.READ_ONLY)
 	private int id;
+    private int employerId;
 	private String employerCompanyName;
 	private String jobPositionPosition;
 	private int openPositionNumber;

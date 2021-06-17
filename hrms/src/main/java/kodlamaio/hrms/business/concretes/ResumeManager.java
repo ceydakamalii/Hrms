@@ -72,6 +72,13 @@ public class ResumeManager implements ResumeService {
 				(resumeDao.findAllByCandidateId(candidateId), ResumeGetDto.class)
 				,"Data Listelendi");
 	}
+
+
+	@Override
+	public DataResult<Resume> getByCandidateId(int candidateId) {
+		return new SuccessDataResult<Resume>(resumeDao.getByCandidateId(candidateId), "Data Listelendi");
+		
+	}
 	
 	
 }

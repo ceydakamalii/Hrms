@@ -11,4 +11,8 @@ export default class JobPostingService {
     addJobPosting(values){
         return axios.post("/jobPostings/add",values)
     }
+
+    getByJobPostingId(id){
+        return axios.get("/jobPostings/getById?id="+id)
+    }
 }

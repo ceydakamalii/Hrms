@@ -28,22 +28,22 @@ public class JobPosting {
 	@Column(name="id")
 	private int id;
 	
-	@ManyToOne(targetEntity = JobPosition.class ,fetch = FetchType.LAZY, optional = false)
+	@ManyToOne(targetEntity = JobPosition.class , optional = false)
 	@JoinColumn(name = "job_position_id", referencedColumnName =  "id" ,nullable = false)
 	private JobPosition jobPosition;
 	
 	@Column(name="description")
 	private String description;
 	
-	@ManyToOne(targetEntity = City.class ,fetch = FetchType.LAZY, optional = false)
+	@ManyToOne(targetEntity = City.class , optional = false)
 	@JoinColumn(name = "city_id", referencedColumnName =  "id" ,nullable = false)
 	private City city;
 	
-	@ManyToOne(targetEntity = WorkPlace.class ,fetch = FetchType.LAZY, optional = false)
+	@ManyToOne(targetEntity = WorkPlace.class , optional = false)
 	@JoinColumn(name = "work_place_id", referencedColumnName =  "id" ,nullable = false)
 	private WorkPlace workPlace;
 	
-	@ManyToOne(targetEntity = WorkTime.class ,fetch = FetchType.LAZY, optional = false)
+	@ManyToOne(targetEntity = WorkTime.class , optional = false)
 	@JoinColumn(name = "work_time_id", referencedColumnName =  "id" ,nullable = false)
 	private WorkTime workTime;
 	
@@ -65,7 +65,7 @@ public class JobPosting {
 	@Column(name="is_active")
 	private boolean isActive=true;
 	
-	@ManyToOne(targetEntity = Employer.class ,fetch = FetchType.LAZY, optional = false)
+	@ManyToOne(targetEntity = Employer.class , optional = false)
 	@JoinColumn(name = "employer_id", referencedColumnName =  "user_id" ,nullable = false)
 	private Employer employer;
 
