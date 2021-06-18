@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CandidateService from '../../services/candidateService';
-import { Button, Icon } from 'semantic-ui-react'
 import { Table } from 'react-bootstrap'
-import { NavLink } from "react-router-dom";
-import ResumeDetail from '../ResumeDetail';
+
 export default function Candidate() {
     const [candidates, setCandidates] = useState([]);
     useEffect(() => {

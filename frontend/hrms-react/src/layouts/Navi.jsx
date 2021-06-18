@@ -5,12 +5,10 @@ import {
     Container,
     Nav,
     Button,
-    Jumbotron,
-    Form,
-    FormControl,
     Dropdown,
     ButtonGroup,
     DropdownButton,
+    
 } from "react-bootstrap";
 
 export default function Navi() {
@@ -99,24 +97,7 @@ export default function Navi() {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <Jumbotron>
-                <h1 className="h1" style={{ fontSize: "3rem" }}>
-                    Hello, world!
-                </h1>
-                <h5>
-                    This is a simple hero unit, a simple jumbotron-style component for
-                    calling extra attention to featured content or information.
-                </h5>
-                <Form className="d-inline-flex">
-                    <FormControl
-                        type="search"
-                        placeholder="City"
-                        className="mr-4 ml-4"
-                        aria-label="Search"
-                    />
-                    <Button variant="success">Search</Button>
-                </Form>
-            </Jumbotron>
+           
         </div>
     );
 }

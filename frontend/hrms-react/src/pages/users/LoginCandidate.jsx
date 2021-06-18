@@ -1,6 +1,8 @@
 import React from 'react'
-import { Formik} from "formik";
-import { Form, InputGroup, Col, Button } from 'react-bootstrap'
+import { Formik } from "formik";
+import { Form, Col, Row } from 'react-bootstrap'
+import { FormField, Label, Button } from 'semantic-ui-react'
+import { Input } from 'formik-semantic-ui-react'
 import * as yup from "yup";
 export default function LoginCandidate() {
     let schema = yup.object().shape({
@@ -10,7 +12,7 @@ export default function LoginCandidate() {
         terms: yup.bool().required().oneOf([true], 'Terms must be accepted'),
     });
     return (
-        <div>
+        <div className="border rounded p-3" style={{ background: "#EDEDED" }}>
             <h1>Üye Girişi</h1>
             <Formik
                 initialValues={{
@@ -38,67 +40,67 @@ export default function LoginCandidate() {
                     isSubmitting,
                     /* and other goodies */
                 }) => (
-                    <Form noValidate onSubmit={handleSubmit} >
-                        <Form.Row>
-                            <Form.Group as={Col} md="4"></Form.Group>
-                            <Form.Group as={Col} md="4" controlId="validationFormikMail">
-                                <Form.Label>Mail</Form.Label>
-                                <InputGroup hasValidation>
-                                    <InputGroup.Prepend>
-                                        <InputGroup.Text id="inputGroupPrepend"></InputGroup.Text>
-                                    </InputGroup.Prepend>
-                                    <Form.Control
-                                        type="email"
-                                        placeholder="Mail"
-                                        aria-describedby="inputGroupPrepend"
+                    <Form className="page-center" noValidate onSubmit={handleSubmit}>
+                        <Row>
+                            <Form.Group as={Col} md="12" widths="equal" controlId="validationFormik01">
+                                <Form.Label>E-Mail</Form.Label>
+                                <FormField>
+                                    <Input
                                         name="mail"
+                                        placeholder="mail"
                                         value={values.mail}
                                         onChange={handleChange}
-                                        isInvalid={!!errors.mail}
+                                        type="email"
+                                        style={{ display: "block" }}
                                     />
-                                    <Form.Control.Feedback type="invalid">
-                                        {errors.mail}
-                                    </Form.Control.Feedback>
-                                </InputGroup>
+                                    {errors.mail && (
+                                        <Label basic color="red" pointing>
+                                            {errors.mail}
+                                        </Label>
+                                    )}
+                                </FormField>
                             </Form.Group>
-                        </Form.Row>
-                        <Form.Row>
-                            <Form.Group as={Col} md="4"></Form.Group>
-                            <Form.Group as={Col} md="4" controlId="validationFormik03">
-                                <Form.Label>Password</Form.Label>
-                                <InputGroup hasValidation>
-                                    <InputGroup.Prepend>
-                                        <InputGroup.Text id="inputGroupPrepend"></InputGroup.Text>
-                                    </InputGroup.Prepend>
-                                    <Form.Control
-                                        type="password"
-                                        placeholder="password"
+                        </Row>
+                        <Row>
+                            <Form.Group as={Col} md="12" widths="equal" controlId="validationFormik06">
+                                <Form.Label>Şifre</Form.Label>
+                                <FormField>
+                                    <Input
                                         name="password"
+                                        placeholder="password"
                                         value={values.password}
+                                        type="password"
                                         onChange={handleChange}
-                                        isInvalid={!!errors.password}
+                                        style={{ display: "block" }}
                                     />
-
-                                    <Form.Control.Feedback type="invalid">
-                                        {errors.password}
-                                    </Form.Control.Feedback>
-                                </InputGroup>
+                                    {errors.password && (
+                                        <Label basic color="red" pointing>
+                                            {errors.password}
+                                        </Label>
+                                    )}
+                                </FormField>
                             </Form.Group>
-
-
-                        </Form.Row>
-                        <Form.Group>
+                        </Row>
+                        <Form.Group className="mb-3">
                             <Form.Check
                                 required
                                 name="terms"
-                                label="Agree to terms and conditions"
+                                label="Beni Hatırla"
                                 onChange={handleChange}
                                 isInvalid={!!errors.terms}
                                 feedback={errors.terms}
                                 id="validationFormik0"
                             />
                         </Form.Group>
-                        <Button type="submit">Submit form</Button>
+                        <Button
+                            content="Giriş Yap"
+                            labelPosition="right"
+                            icon="add"
+                            positive
+                            type="submit"
+                            style={{ marginLeft: "20px" }}
+                            
+                        />
                     </Form>
                 )}
 

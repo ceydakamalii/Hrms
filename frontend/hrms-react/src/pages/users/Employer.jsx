@@ -11,7 +11,7 @@ export default function Employer() {
     }, [])
     return (
         <div>
-            <Table striped hover className="table table-bordered border-success table-light table-responsive-lg ">
+            <Table striped hover className="table-light table-responsive-lg border-success">
                 <thead>
                     <tr>
                         <th>E-Mail</th>
