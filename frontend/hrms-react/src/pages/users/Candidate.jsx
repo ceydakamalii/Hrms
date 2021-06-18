@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import CandidateService from '../../services/candidateService';
-import { Header, Image, Button, Icon } from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 import { Table } from 'react-bootstrap'
 import { NavLink } from "react-router-dom";
+import ResumeDetail from '../ResumeDetail';
 export default function Candidate() {
     const [candidates, setCandidates] = useState([]);
     useEffect(() => {
@@ -11,7 +12,7 @@ export default function Candidate() {
     }, [])
     return (
         <div>
-            <Table striped bordered hover className="table-light table-responsive border-success">
+            <Table striped bordered hover className="table-light table-responsive-lg border-success">
                 <thead>
                     <tr>
                         <th>E-Mail</th>
@@ -19,7 +20,7 @@ export default function Candidate() {
                         <th>SOYAD</th>
                         <th>TC KİMLİK</th>
                         <th>DOĞUM TARİHİ</th>
-                        <th>İncele</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -40,15 +41,7 @@ export default function Candidate() {
                             <td>
                                 {candidate.birth_year}
                             </td>
-                            <td>
-                                <Button animated as={NavLink} to={"/"}>
-                                    <Button.Content visible>İncele</Button.Content>
-                                    <Button.Content hidden>
-                                        <Icon name="arrow right" />
-                                    </Button.Content>
-                                </Button>
-                            </td>
-
+                           
                         </tr>
                     ))}
 

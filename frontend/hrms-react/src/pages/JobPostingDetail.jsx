@@ -114,7 +114,7 @@ export default function JobPostingDetail() {
                             <Table.Body>
                                 <Table.Row>
                                     <Table.Cell>İş Pozisyonu</Table.Cell>
-                                    <Table.Cell>{jobPosting.jobPosition?.name}</Table.Cell>
+                                    <Table.Cell>{jobPosting.jobPosition?.position}</Table.Cell>
                                 </Table.Row>
 
                                 <Table.Row>
@@ -144,17 +144,17 @@ export default function JobPostingDetail() {
 
                                 <Table.Row>
                                     <Table.Cell>Açık Pozisyonlar</Table.Cell>
-                                    <Table.Cell>{jobPosting.openPositions}</Table.Cell>
+                                    <Table.Cell>{jobPosting.openPositionNumber}</Table.Cell>
                                 </Table.Row>
 
                                 <Table.Row>
                                     <Table.Cell>Yayınlanma Tarihi</Table.Cell>
-                                    <Table.Cell>{jobPosting.createDate}</Table.Cell>
+                                    <Table.Cell>{jobPosting.createdDate}</Table.Cell>
                                 </Table.Row>
 
                                 <Table.Row>
                                     <Table.Cell>Son Başvuru Tarihi</Table.Cell>
-                                    <Table.Cell>{jobPosting.lastDate}</Table.Cell>
+                                    <Table.Cell>{jobPosting.closedDate}</Table.Cell>
                                 </Table.Row>
                             </Table.Body>
                         </Table>

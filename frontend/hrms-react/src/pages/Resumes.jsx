@@ -15,7 +15,7 @@ export default function Resumes() {
     return (
         <div>
 
-            <Table striped bordered hover className="table-light table-responsive border-success">
+            <Table striped bordered hover className="table-light table-responsive-lg border-success">
                 <thead>
                     <tr>
                         <th>Aday</th>
@@ -31,7 +31,7 @@ export default function Resumes() {
                         <tr key={resume.id}>
                             <td>
                                 <Header as="h4" image>
-                                    <Image src={resume.photo} rounded size="mini" />
+                                    <Image src={resume?.photo} rounded size="mini" />
                                     <Header.Content>
                                         {resume.candidateName + " " + resume.candidateSurname}
                                     </Header.Content>
@@ -62,7 +62,7 @@ export default function Resumes() {
                                 </a>
                             </td>
                             <td>
-                                <Button animated as={NavLink} to={`/resume/candidate/${resume.candidateId}`}>
+                                <Button animated as={NavLink} to={`/resume/${resume.id}`}>
                                     <Button.Content visible>İncele</Button.Content>
                                     <Button.Content hidden>
                                         <Icon name="arrow right" />

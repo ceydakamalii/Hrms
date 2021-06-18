@@ -13,7 +13,7 @@ export default function JobPostings() {
         <div>
 
             {jobPostings.map((jobPosting) => (
-                <Card className="mb-2 text-left" border="success " key={jobPosting.id}>
+                <Card className="mb-2 text-left table-responsive-lg" border="success " key={jobPosting.id}>
                     <Card.Header as="h5">{jobPosting.employerCompanyName}-{jobPosting.jobPositionPosition}</Card.Header>
                     <Card.Body>
                         <Card.Title>Haydi Sende Bize Katıl!</Card.Title>

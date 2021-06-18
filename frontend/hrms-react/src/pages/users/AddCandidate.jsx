@@ -1,8 +1,8 @@
 import React from 'react'
 import CandidateService from '../../services/candidateService';
-import { Formik, setNestedObjectValues } from "formik";
-import { Form, Input, SubmitButton, ResetButton, TextArea, Select } from 'formik-semantic-ui-react'
-import { Grid, Header, Segment, FormGroup, FormField, Label } from 'semantic-ui-react'
+import { Formik } from "formik";
+import { Form, Input, SubmitButton } from 'formik-semantic-ui-react'
+import {  FormGroup, FormField, Label } from 'semantic-ui-react'
 import * as yup from "yup";
 export default function AddCandidate() {
     let schema = yup.object().shape({

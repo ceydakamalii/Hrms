@@ -3,7 +3,7 @@ export default class ResumService {
     getResumes() {
         return axios.get("/resumes/getall")
     }
-    getByCandidateId(candidateId){
-        return axios.get("/resume/getByCandidateId?id="+candidateId)
+    getById(id){
+        return axios.get("/resumes/getById?id="+id)
     }
 }

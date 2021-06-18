@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import CityService from '../services/cityService'
 import JobPostingService from '../services/jobPostingService';
-import { Formik, setNestedObjectValues } from "formik";
-import { Form, Input, SubmitButton, ResetButton, TextArea, Select } from 'formik-semantic-ui-react'
-import { Grid, Header, Segment, FormGroup, FormField, Label } from 'semantic-ui-react'
+import { Formik } from "formik";
+import { Form, Input, SubmitButton, TextArea, Select } from 'formik-semantic-ui-react'
+import {  FormGroup, FormField, Label } from 'semantic-ui-react'
 import * as yup from "yup";
 import WorkTimeService from '../services/workTimeService';
 import WorkPlaceService from '../services/workPlaceService';

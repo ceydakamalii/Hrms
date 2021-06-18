@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import EmployerService from '../../services/employerService';
-import { Header, Image, Button, Icon } from 'semantic-ui-react'
+import {  Button, Icon } from 'semantic-ui-react'
 import { Table } from 'react-bootstrap'
 import { NavLink } from "react-router-dom";
 export default function Employer() {
@@ -11,7 +11,7 @@ export default function Employer() {
     }, [])
     return (
         <div>
-            <Table striped hover className="table table-bordered border-success table-light table-responsive-sm ">
+            <Table striped hover className="table table-bordered border-success table-light table-responsive-lg ">
                 <thead>
                     <tr>
                         <th>E-Mail</th>
@@ -36,7 +36,7 @@ export default function Employer() {
                                 {employer.phoneNumber}
                             </td>
                             <td>
-                                <Button animated as={NavLink} to={"/"}>
+                                <Button animated as={NavLink} to={`/employers/${employer.id}`}>
                                     <Button.Content visible>İncele</Button.Content>
                                     <Button.Content hidden>
                                         <Icon name="arrow right" />
